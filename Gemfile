@@ -47,3 +47,4 @@ group :development do
 end
 
 gem 'graphql', '~> 2.0.15'
+gem 'faker'
