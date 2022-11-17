@@ -9,5 +9,6 @@ module Types
 
     # TODO: remove me
     field :user, resolver: Resolvers::User
+    field :users, resolver: Resolvers::Users
   end
 end

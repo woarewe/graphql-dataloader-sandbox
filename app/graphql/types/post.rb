@@ -4,6 +4,6 @@ module Types
     field :title, String, null: false
     field :body, String, null: false
     field :user, User, null: false
-    field :post, Post, null: false
+    field :comments, [Comment], null: false
   end
 end
