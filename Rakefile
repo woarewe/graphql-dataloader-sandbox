@@ -2,5 +2,14 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require_relative "config/application"
+require 'graphql/rake_task'
 
 Rails.application.load_tasks
+
+GraphQL::RakeTask.new(
+  load_schema: lambda do |_task|
+    require_relative 'config/environment'
+    RailsGraphqlDataloaderSchema
+  end,
+  directory: 'app/graphql'
+)

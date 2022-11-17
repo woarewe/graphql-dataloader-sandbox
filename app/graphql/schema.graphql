@@ -1,0 +1,33 @@
+type Comment {
+  body: String!
+  id: ID!
+  post: Post!
+  user: User!
+}
+
+type Mutation {
+  """
+  An example field added by the generator
+  """
+  testField: String!
+}
+
+type Post {
+  body: String!
+  id: ID!
+  post: Post!
+  title: String!
+  user: User!
+}
+
+type Query {
+  user(id: ID!): User
+}
+
+type User {
+  comments: [Comment!]!
+  firstName: String!
+  id: ID!
+  lastName: String!
+  posts: [Post!]!
+}
