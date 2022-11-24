@@ -6,5 +6,13 @@ module Types
     field :email, String, null: false
     field :comments, [Comment], null: false
     field :posts, [Post], null: false
+
+    def posts
+      dataloader.with(Sources::PostsByUserId).load(object.id)
+    end
+
+    def comments
+      dataloader.with(Sources::CommentsByUserId).load(object.id)
+    end
   end
 end

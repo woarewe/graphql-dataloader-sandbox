@@ -7,7 +7,7 @@ module Resolvers
     argument :id, ID, required: true
 
     def resolve(id:)
-      ::User.find_by(id:)
+      dataloader.with(Sources::UserById).load(id)
     end
   end
 end
